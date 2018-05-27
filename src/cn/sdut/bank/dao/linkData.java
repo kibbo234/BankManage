@@ -9,7 +9,7 @@ import java.lang.*;
 
 public class linkData {
     public static void main(String[] args)throws Exception{
-        static Connection conn = null;
+        Connection conn = null;
         String sql;
         String url = "jdbc:mysql://vargoo.com:3306/BankManage?" + "user=root&password=liuxh&useUnicode=true&characterEncoding=UTF8";
         try {
