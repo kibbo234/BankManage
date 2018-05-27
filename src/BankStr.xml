@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BankManage>
+    <dao name="数据库操作">
+        <include name="链接数据库">linkData</include>
+    </dao>
+    <service name="业务层">
+    </service>
+    <view name="表示层">
+    </view>
+    <tools name="通用工具">
+        <include name="用户信息">userInfo</include>
+    </tools>
+    <po name="JavaBean">
+    </po>
+</BankManage>
