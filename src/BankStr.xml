@@ -2,10 +2,23 @@
 <BankManage>
     <dao name="数据库操作">
         <include name="链接数据库">linkData</include>
+        <include name=""></include>
     </dao>
     <service name="业务层">
     </service>
     <view name="表示层">
+        <include name="界面">
+            <Menu>菜单</Menu>
+            <Register>注册</Register>
+            <ReportLost>挂失</ReportLost>
+            <Inquiry>查询</Inquiry>
+            <Savemoney>存款</Savemoney>
+            <DrawMoney>取款</DrawMoney>
+            <Transfer>转账</Transfer>
+            <Modify>改密码</Modify>
+
+        </include>
+
     </view>
     <tools name="通用工具">
         <include name="用户信息">userInfo</include>
