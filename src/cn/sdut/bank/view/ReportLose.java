@@ -1,19 +1,14 @@
 package cn.sdut.bank.view;
 
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -30,8 +25,11 @@ public class ReportLose extends JFrame implements ActionListener{
     JTextField jtf1,jtf2,jtf3,jtf4;   //文本框
     JLabel jlb1, jlb2, jlb3; //标签
     JTextArea jta;
+//    public Account user;
+
     public ReportLose()
     {
+//        this.user = user;
         // TODO Auto-generated constructor stub
         jb1 = new JButton("确定");
         jb2 = new JButton("重置");

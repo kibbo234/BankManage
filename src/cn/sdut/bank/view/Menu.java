@@ -1,14 +1,12 @@
 package cn.sdut.bank.view;
 
 
-import cn.sdut.bank.dao.AboutUser;
-import cn.sdut.bank.dao.Account;
+import cn.sdut.bank.tools.CurrentUser;
 
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.swing.*;
 
@@ -20,10 +18,10 @@ public class Menu extends JFrame implements ActionListener{
 
     JButton jb1, jb2, jb3,jb4,jb5,jb6,jb7, jb8;  //创建按钮
     JLabel jlb1, jlb2, jlb3,jlb4;//标签
-    public Account user;
-    public Menu(Account user)
+//    public Account user;
+    public Menu()
     {
-        this.user = user;
+//        this.user = user;
         //所有按钮
         jb1 = new JButton("查询");
         jb2 = new JButton("存款");
@@ -41,7 +39,7 @@ public class Menu extends JFrame implements ActionListener{
         jlb2.setFont(new   java.awt.Font("Dialog",   1,   20));
         jlb3 = new JLabel("请您选择服务");
         jlb3.setFont(new   java.awt.Font("Dialog",   1,   22));
-        jlb4 = new JLabel("用户名:"+user.name);
+        jlb4 = new JLabel("用户名:"+CurrentUser.getName());
         jlb4.setFont(new   java.awt.Font("Dialog",   1,   22));
 
         jb1.addActionListener(this);   //事件监听
@@ -102,27 +100,29 @@ public class Menu extends JFrame implements ActionListener{
         if (e.getActionCommand()=="查询")
         {
             try{
-                new Inquiry("123");
+                new Inquiry();
             }catch (IOException a){
                 a.printStackTrace();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
 
         }
         else if (e.getActionCommand()=="存款")
         {
-            new SaveMoney("123");
+            new SaveMoney();
         }
         else if (e.getActionCommand()=="取款")
         {
-            new DrawMoney("123");
+            new DrawMoney();
         }
         else if (e.getActionCommand()=="转账")
         {
-            new Transfer("123");
+            new Transfer();
         }
         else if (e.getActionCommand()=="改密")
         {
-            new Modify("123");
+            new Modify();
         }
         else if (e.getActionCommand()=="挂失")
         {
@@ -132,7 +132,6 @@ public class Menu extends JFrame implements ActionListener{
         {
             System.exit(0);;
         }
-
 
     }
 

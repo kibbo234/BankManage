@@ -1,8 +1,9 @@
 package cn.sdut.bank.view;
 
 
-import cn.sdut.bank.dao.AboutUser;
-import cn.sdut.bank.dao.Account;
+import cn.sdut.bank.tools.CurrentUser;
+import cn.sdut.bank.service.AboutUser;
+import cn.sdut.bank.tools.Account;
 
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
@@ -10,9 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.lang.String;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 import javax.swing.*;
 
@@ -23,7 +22,7 @@ import javax.swing.*;
  * 最后加入组件中
  */
 
-//图形界面
+//    界面内容样式
 public class Login extends JFrame implements ActionListener {
 
     JButton jb1, jb2, jb3;  //按钮
@@ -117,7 +116,6 @@ public class Login extends JFrame implements ActionListener {
         String account = jtf.getText();
         String password = String.valueOf(jpf.getPassword());
 //        System.out.println(password);
-
         if(jtf.getText().isEmpty()&& 0 == jpf.getPassword().length)
         {
             JOptionPane.showMessageDialog(null, "账号密码为空，请输入！","消息提示",JOptionPane.WARNING_MESSAGE);
@@ -144,7 +142,8 @@ public class Login extends JFrame implements ActionListener {
                 System.out.println(user.password);
                 if(user.password.equals(password)) {
                     JOptionPane.showMessageDialog(null,"登录成功！","提示消息",JOptionPane.WARNING_MESSAGE);
-                    new Menu(user);
+                    new  CurrentUser(user);
+                    new Menu();
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "密码错误请重新输入！","消息提示",JOptionPane.ERROR_MESSAGE);
@@ -152,8 +151,6 @@ public class Login extends JFrame implements ActionListener {
 
             }
         }
-
-
 
     }
 

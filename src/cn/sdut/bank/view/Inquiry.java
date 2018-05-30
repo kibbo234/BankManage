@@ -1,11 +1,13 @@
 package cn.sdut.bank.view;
 
 
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import cn.sdut.bank.service.AboutMoney;
+import cn.sdut.bank.service.AboutUser;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.swing.*;
 /**
@@ -20,13 +22,14 @@ public class Inquiry extends JFrame implements ActionListener{
     JTextField jtf1,jtf2,jtf3;   //文本框
     JPasswordField jpf; //密码框
     JPanel jp1,jp2,jp3;     //面板
+//    public Account user;
 
-    public Inquiry(String countname) throws IOException {
+    public Inquiry() throws IOException, SQLException {
         // TODO Auto-generated constructor stub
         //标签信息
-
+//        this.user = user;
         jlb1 = new JLabel("        姓名");
-        jlb2 = new JLabel("身份证号");
+        jlb2 = new JLabel("        当前时间");
         jlb3 = new JLabel("        余额");
 
         jtf1 = new JTextField(13);
@@ -76,7 +79,11 @@ public class Inquiry extends JFrame implements ActionListener{
 //        jtf2.setText(message[1]);
 //        jtf3.setText(message[4]);
 
-
+        try {
+            getData();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -85,6 +92,11 @@ public class Inquiry extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent arg0) {
         // TODO Auto-generated method stub
 
+    }
+
+    public void getData() throws SQLException {
+        int data = AboutMoney.getMoney();
+        jtf3.setText(String.valueOf(data));
     }
 
 }

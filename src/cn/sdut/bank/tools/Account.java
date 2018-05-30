@@ -1,4 +1,4 @@
-package cn.sdut.bank.dao;
+package cn.sdut.bank.tools;
 
 
 import java.lang.String;
@@ -52,7 +52,7 @@ public class Account {
         this.exist = false;
     }
 
-    Account(String account, String name, String password, int power, boolean exist){
+    public Account(String account, String name, String password, int power, boolean exist){
         this.account = account;
         this.name = name;
         this.password = password;

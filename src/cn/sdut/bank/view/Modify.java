@@ -8,10 +8,8 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 /**
  * 实现改密操作
@@ -28,9 +26,10 @@ public class Modify extends JFrame implements ActionListener{
     String name = "123";   //账号密码
     String pwd = "123";
     String countname;
+//    public Account user;
 
-    public Modify(String countname) {
-        this.countname = countname;
+    public Modify() {
+//        this.user = user;
         // TODO Auto-generated constructor stub
         jb1 = new JButton("确定");
         jb2 = new JButton("重置");

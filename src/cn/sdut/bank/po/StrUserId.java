@@ -1,11 +1,11 @@
-package cn.sdut.bank.tools;
+package cn.sdut.bank.po;
 
-import cn.sdut.bank.dao.Account;
+import cn.sdut.bank.tools.Account;
 
 public class StrUserId {
     private String sql;
 
-    //建表格
+//      建立表格
     public String BulidTable(){
         this.sql = "CREATE TABLE IF NOT EXISTS `userId`(\n" +
                 "  `id` INT UNSIGNED AUTO_INCREMENT, \n" +
@@ -21,6 +21,8 @@ public class StrUserId {
         return this.sql;
     }
 
+
+//    获取用户所有信息
     public String SearchInformation(Account user){
         if(user.power==1){
             this.sql = "SELECT * FROM userId;";
@@ -31,10 +33,11 @@ public class StrUserId {
         return this.sql;
     }
 
+//    插入用户操作   #权限问题以后 admin=1 user=2
     public String InsertData(Account user){
         this.sql="INSERT INTO userId (account, name, password, subTime, power,exist)\n" +
                 "values\n" +
-                "  ('"+user.account+"','"+user.name+"','"+user.password+"',now(),1, true);";
+                "  ('"+user.account+"','"+user.name+"','"+user.password+"',now(),2, true);";
         return this.sql;
     }
 
@@ -44,6 +47,14 @@ public class StrUserId {
 //                "  ('"+user.account+"','"+user.name+"','"+user.password+"',now(),2, true);";
 //        return this.sql;
 //    }
+
+//    更改密码操作  #用户密码更改
+    public String UpdatPassword(String password){
+
+
+        this.sql = "123";
+        return this.sql;
+    }
 
 
 

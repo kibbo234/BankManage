@@ -11,7 +11,6 @@ public class Main {
 
        new Login();
 
-
         /*String str = "INSERT INTO userId (account, name, password, subTime, power)\n" +
                 "    VALUES\n" +
                 "      ('root123','admin', MD5('123456'),NOW() ,-1);";
@@ -22,5 +21,6 @@ public class Main {
         }else{
             System.out.println("No!");
         }*/
+
     }
 }

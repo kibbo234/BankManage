@@ -17,7 +17,7 @@ public class linkDatabase {
     public String url = "jdbc:mysql://vargoo.com:3306/BankManage?" + "user=root&password=liuxh&useUnicode=true&characterEncoding=UTF8";
     public static Statement stmt = null;
     public String str;
-    public boolean rs ;
+    public int rs ;
     public ResultSet ru ;
 
     //链接到数据库
@@ -86,7 +86,7 @@ public class linkDatabase {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(url);
             Statement stmt = conn.createStatement();
-            this.rs = stmt.execute(str);
+            this.rs = stmt.executeUpdate(str);
             System.out.println("数据库链接成功");
 
         } catch (ClassNotFoundException | SQLException e){
@@ -94,7 +94,11 @@ public class linkDatabase {
         } finally {
 
         }
-        return this.rs;
+        if(this.rs!=0){
+            return true;
+        }else {
+            return false;
+        }
     }
 
 }

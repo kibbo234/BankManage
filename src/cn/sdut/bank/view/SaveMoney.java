@@ -1,16 +1,14 @@
 package cn.sdut.bank.view;
-import java.awt.GridLayout;
+
+import cn.sdut.bank.service.AboutMoney;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 /**
  * 本类实现对存钱的操作  注意金额的处理
@@ -23,9 +21,10 @@ public class SaveMoney extends JFrame implements ActionListener{
     JButton jb1, jb2, jb3;  //按钮
     JLabel jlb1, jlb2, jlb3; //标签
     JTextArea jta1,jta2;
+//    public Account user;
 
-    public SaveMoney(String countname) {
-        this.countname = countname;
+    public SaveMoney() {
+//        this.user = user;
 
         // TODO Auto-generated constructor stub
         jb1 = new JButton("确定");
@@ -88,20 +87,22 @@ public class SaveMoney extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-//        if (e.getActionCommand()=="确定")
-//        {
-//
+        if (e.getActionCommand()=="确定")
+        {
+            int add = Integer.valueOf(jta1.getText());
+            AboutMoney.addMoney(add);
+
 //            try {
 //                savemoney();   //将存入金额传入判断是否合法
 //            } catch (IOException e1) {
 //                // TODO Auto-generated catch block
 //                e1.printStackTrace();
 //            }
-//        }
-//        else if (e.getActionCommand()=="重置")
-//        {
-//            clear();
-//        }
+        }
+        else if (e.getActionCommand()=="重置")
+        {
+            clear();
+        }
 
     }
     /*

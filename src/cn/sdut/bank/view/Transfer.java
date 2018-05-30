@@ -2,12 +2,10 @@ package cn.sdut.bank.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -25,12 +23,11 @@ public class Transfer extends JFrame implements ActionListener{
     JTextArea jta1,jta2;    //文本框
     JTextField jtf1;
     JPanel jp1;
-
+//    public Account user;
     public static boolean flag=true;
 
-    public Transfer(String countname) {
-        this.countname = countname;
-
+    public Transfer() {
+//        this.user = user;
         // TODO Auto-generated constructor stub
         jb1 = new JButton("确定");
         jb2 = new JButton("重置");

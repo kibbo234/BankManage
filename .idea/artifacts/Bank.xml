@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Bank">
+    <output-path>$PROJECT_DIR$/out/artifacts/Bank</output-path>
+    <root id="archive" name="Bank.jar">
+      <element id="module-output" name="BankManage" />
+      <element id="file-copy" path="$PROJECT_DIR$/jar/mysql-connector-java-5.1.18-bin.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/jar/commons-dbutils-1.7.jar" />
+    </root>
+  </artifact>
+</component>

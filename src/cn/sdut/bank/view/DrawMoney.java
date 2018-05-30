@@ -1,13 +1,13 @@
 package cn.sdut.bank.view;
 
+import cn.sdut.bank.service.AboutMoney;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -20,14 +20,11 @@ import javax.swing.JTextArea;
  */
 public class DrawMoney extends JFrame implements ActionListener {
 
-    String countname;
     JButton jb1, jb2, jb3;  //按钮
     JLabel jlb1, jlb2, jlb3; //标签
     JTextArea jta1, jta2;
 
-    public DrawMoney(String countname) {
-        this.countname = countname;
-
+    public DrawMoney() {
         // TODO Auto-generated constructor stub
         jb1 = new JButton("确定");
         jb2 = new JButton("重置");
@@ -88,16 +85,18 @@ public class DrawMoney extends JFrame implements ActionListener {
     //@Override
     public void actionPerformed(ActionEvent e) {
 //        // TODO Auto-generated method stub
-//        if (e.getActionCommand()=="确定")
-//        {
-//
+        if (e.getActionCommand()=="确定")
+        {
+            int cut = Integer.valueOf(jta1.getText());
+            AboutMoney.cutMoney(cut);
+
 //            try {
 //                drawmoney();   //将存入金额传入判断是否合法
 //            } catch (IOException e1) {
 //                // TODO Auto-generated catch block
 //                e1.printStackTrace();
 //            }
-//        }
+        }
 //        else if (e.getActionCommand()=="重置")
 //        {
 //            clear();

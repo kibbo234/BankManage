@@ -1,9 +1,8 @@
 package cn.sdut.bank.view;
 
-import cn.sdut.bank.dao.AboutUser;
-import cn.sdut.bank.dao.Account;
+import cn.sdut.bank.service.AboutUser;
+import cn.sdut.bank.tools.Account;
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
